@@ -1,26 +1,33 @@
 import React from "react";
-import logo from "./logo.svg";
+import Sidebar from './components/Sidebar/Sidebar';
 import "./App.css";
-import Test from "./components/Test";
+import Footer from './components/Footer/Footer';
+import Dropbox from "./components/Dropbox/Dropbox";
+import Profile from './components/Profile/Profile';
+import Navigation from './components/Nav/Navigation';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const [data, setData] = React.useState(null);
+  // const [data, setData] = React.useState(null);
 
-  React.useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
-  }, []);
+  // React.useEffect(() => {
+  //   fetch("/api")
+  //     .then((res) => res.json())
+  //     .then((data) => setData(data.message));
+  // }, []);
 
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>{!data ? "Loading..." : data}</p>
-    //   </header>
-    // </div>
-    <Test></Test>
-
+    <div className='page'>
+      <Navigation/>
+      <Row>
+        <Col xs={2}><Sidebar/></Col>
+        <Col xs={7}><Dropbox/></Col>
+        <Col xs={3}><Profile/></Col>
+      </Row>
+      <Footer/>
+    </div>
   );
 }
 
