@@ -1,6 +1,6 @@
 import React, { useMemo, useEffect, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
-
+import './Dropbox.css';
 const baseStyle = {
   flex: 1,
   display: 'flex',
@@ -14,7 +14,8 @@ const baseStyle = {
   backgroundColor: '#fafafa',
   color: '#bdbdbd',
   outline: 'none',
-  transition: 'border .24s ease-in-out'
+  transition: 'border .24s ease-in-out',
+  marginTop: '1rem'
 };
 
 const activeStyle = {
@@ -60,7 +61,7 @@ const img = {
   height: '100%'
 };
 
-function Test(props) {
+function Dropbox(props) {
   const [files, setFiles] = useState([]);
   const {
     getRootProps,
@@ -126,11 +127,10 @@ function Test(props) {
       </div>
       <aside>
         <h4>Files</h4>
-        <ul>{filepath}</ul>
       </aside>
       <aside style={thumbsContainer}>
         {thumbs}
       </aside>
     </div>
   );
-} export default Test;
+} export default Dropbox;
