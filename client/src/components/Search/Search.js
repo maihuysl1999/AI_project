@@ -38,8 +38,11 @@ const Search = () => {
                 </Form.Group>
                 <Button type="submit">Search</Button>
             </Form>
+            <div className="title_result">
+                <h5>Kết quả tìm kiếm</h5>
+            </div>
             <div className="search_result">
-                
+
             </div>
         </div>
     );

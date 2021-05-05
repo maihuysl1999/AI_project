@@ -8,7 +8,11 @@
     border-radius: 20px;
     padding: 1rem;
     width: 60rem;
-    height: 30rem;
+}
+
+.title_result{
+    text-align: center;
+    width: 60rem;
 }
 
 .form_search{
