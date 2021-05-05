@@ -7,14 +7,14 @@
     margin-bottom: 3rem;
     border-radius: 20px;
     padding: 1rem;
-    width: 60rem;
+    width: 100%;
 }
 
 .title_result{
     text-align: center;
-    width: 60rem;
+    width: 100%;
 }
 
 .form_search{
-    width: 60rem;
+    width: 100%;
 }
