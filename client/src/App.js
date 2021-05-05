@@ -1,14 +1,16 @@
 import React from "react";
-import Sidebar from './components/Sidebar/Sidebar';
 import "./App.css";
-import Footer from './components/Footer/Footer';
-import Dropbox from "./components/Dropbox/Dropbox";
-import Profile from './components/Profile/Profile';
-import Navigation from './components/Nav/Navigation';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Search from './components/Search/Search';
+import Footer from './components/Footer/Footer';
+import Navigation from './components/Nav/Navigation';
+import Check from './components/Check';
+import SearchPatient from './components/SearchPatient';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  //Link
+} from "react-router-dom";
 
 function App() {
   // const [data, setData] = React.useState(null);
@@ -20,15 +22,16 @@ function App() {
   // }, []);
 
   return (
-    <div className='page'>
+    <Router>
       <Navigation/>
-      <Row>
-        <Col xs={2}><Sidebar/></Col>
-        <Col xs={7}><Search/></Col>
-        {/* <Col xs={3}><Profile/></Col> */}
-      </Row>
+      <Switch>
+        <Route exact path='/' component={Check} />
+        {/* oke */}
+        <Route path='/search' component={SearchPatient} />
+        {/* oke */}
+      </Switch>
       <Footer/>
-    </div>
+    </Router>
   );
 }
 
