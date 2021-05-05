@@ -10,7 +10,7 @@ const Profile = () => {
     return (
         <div className='profile'>
             <strong>HỒ SƠ ĐỐI TƯỢNG</strong>
-            <Form>
+            <Form className = 'form_profile' >
                 <Form.Group as={Row} id="field">
                     <Form.Label column="sm" sm="5">
                     <strong>Họ và tên</strong>

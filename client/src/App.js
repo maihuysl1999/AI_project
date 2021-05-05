@@ -8,6 +8,7 @@ import Navigation from './components/Nav/Navigation';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Search from './components/Search/Search';
 
 function App() {
   // const [data, setData] = React.useState(null);
@@ -23,8 +24,8 @@ function App() {
       <Navigation/>
       <Row>
         <Col xs={2}><Sidebar/></Col>
-        <Col xs={7}><Dropbox/></Col>
-        <Col xs={3}><Profile/></Col>
+        <Col xs={7}><Search/></Col>
+        {/* <Col xs={3}><Profile/></Col> */}
       </Row>
       <Footer/>
     </div>
