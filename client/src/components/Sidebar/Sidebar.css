@@ -10,6 +10,23 @@
     border-color: rgb(202, 60, 60) !important;
     margin-top: 1rem;
     width: 80%;
-    font-size: 14px !important;
     border-radius: 50px !important;
 }
+
+.link-to {
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+}
+
+.link-to:hover {
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+}
+
+
+
+
