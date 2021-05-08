@@ -1,26 +1,37 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import Test from "./components/Test";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from './components/Footer/Footer';
+import Navigation from './components/Nav/Navigation';
+import Check from './components/Check';
+import SearchPatient from './components/SearchPatient';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  //Link
+} from "react-router-dom";
 
 function App() {
-  const [data, setData] = React.useState(null);
+  // const [data, setData] = React.useState(null);
 
-  React.useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
-  }, []);
+  // React.useEffect(() => {
+  //   fetch("/api")
+  //     .then((res) => res.json())
+  //     .then((data) => setData(data.message));
+  // }, []);
 
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>{!data ? "Loading..." : data}</p>
-    //   </header>
-    // </div>
-    <Test></Test>
-
+    <Router>
+      <Navigation/>
+      <Switch>
+        <Route exact path='/' component={Check} />
+        {/* oke */}
+        <Route path='/search' component={SearchPatient} />
+        {/* oke */}
+      </Switch>
+      <Footer/>
+    </Router>
   );
 }
 
