@@ -22,24 +22,19 @@ class Check extends Component {
   
 
   onInputChange = (event) => {
-    var string = event.target.value;
-    var link_value = string.split("/");
-    var link ='https://drive.google.com/uc?id=' + link_value[5];
-    this.setState({input: link});
+    // var string = event.target.value;
+    // var link_value = string.split("/");
+    // var link ='https://drive.google.com/uc?id=' + link_value[5];
+    this.setState({input: event.target.value});
   }
 
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
-    const {  imageUrl } = this.state;
-    let link = 'image_url=' + imageUrl;
-    fetch('http://127.0.0.1:5000/predict',{
-      method: 'POST',
-      headers: {
-        "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-      },
-      body: link
-    }).then(response => response.json())
-    .then(data => this.setState({ result: data.result })); 
+    var link = 'http://localhost:5000/predict?image_url=' + this.state.imageUrl;
+    fetch(link, {method: 'GET',
+    headers: {
+      'Access-Control-Allow-Origin':'*'
+    }}).then(response => response.json()).then(data => {this.setState(this.setState({result: data.result}))});
   }
 
   render() {
