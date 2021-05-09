@@ -4,6 +4,7 @@ const cors = require('cors');
 const knex = require('knex');
 
 
+
 const { response } = require('express');
 
 const db = knex({
@@ -18,6 +19,7 @@ const db = knex({
 
 
 const profileInput = require('./controllers/profileInput');
+const profileInfo = require('./controllers/profileInfo');
 
 const PORT = process.env.PORT || 3001;
 
@@ -25,6 +27,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.post('/profileinput', (req, res) => { profileInput.handleProfileInput(req, res, db) });
+app.get('/profileinfo', (req, res) => { profileInfo.handleProfileInfor(req, res, db) })
 
 app.get("/", (req, res) => {
     res.json({ message: "Hello from server!" });

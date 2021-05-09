@@ -89,9 +89,7 @@ class Profile extends Component {
                     <Button type="submit" className="submit-button" onClick={this.onSubmit}>Lưu lại</Button> 
                     <Button as="input" type="reset" value="Làm mới" className="reset-button"/>
                 </Form>
-    
                 <strong>KẾT QUẢ</strong>
-    
                 <div className="result">
                     Chuẩn đoán : {this.props.result}
                 </div>
