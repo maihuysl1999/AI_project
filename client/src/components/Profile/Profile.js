@@ -93,7 +93,7 @@ class Profile extends Component {
                 <strong>KẾT QUẢ</strong>
     
                 <div className="result">
-                    Chuẩn đoán bằng phần mềm : {this.props.result}
+                    Chuẩn đoán : {this.props.result}
                 </div>
             </div>
         );
