@@ -16,7 +16,7 @@ function PatientList(props) {
         <ul className="post-list">
             <h1>danh sach</h1>
             {posts.map(post => (
-                <li key={post.id}>{post.name}</li>
+                <li key={post.id}>{post.name}-{post.address}-{post.idno}--{post.planeid}</li>
             ))
             }
         </ul>
